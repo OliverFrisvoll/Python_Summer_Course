@@ -29,7 +29,7 @@ def main():
     print(exercise_1(12))
 
     # Exercise 2
-    shake_spear = Exercise2('shakespeare_sonnets.txt')
+    shake_spear = Exercise2('data/shakespeare_sonnets.txt')
     print(f"Words in text: {shake_spear.get_words()}")
     print(f"Unique words in text: {shake_spear.get_unique_words()}")
     print(f"Most frequent word in the text: {shake_spear.get_most_frequent_words()[0][0]}")
