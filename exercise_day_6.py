@@ -3,26 +3,25 @@ from collections import Counter
 
 
 def exercise_1(number: int):
-    number = list(str(number))
-    return sum(int(x) for x in number)
+    return sum(int(x) for x in str(number))
 
 
 class Exercise2:
     def __init__(self, file_location: str):
         self.file_location = file_location
 
-    def _import_file(self):
+    def _open_file(self):
         with open(self.file_location, 'r') as f:
             return f.read()
 
     def get_words(self):
-        return len(self._import_file().split())
+        return len(self._open_file().split())
 
     def get_unique_words(self):
-        return len(set(self._import_file().split()))
+        return len(set(self._open_file().split()))
 
     def get_most_frequent_words(self, number: int = 1):
-        return Counter(self._import_file().split()).most_common(number)
+        return Counter(self._open_file().split()).most_common(number)
 
 
 def main():
