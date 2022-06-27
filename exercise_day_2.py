@@ -1,9 +1,13 @@
 # Created by ocfri at 22/06/2022
-import logging
+
+# Exercise 1:
+def dashes():
+    name = input("Enter your name: ")
+    print(f"HELLO, {'-'.join(name.upper())}!")
 
 
 def main():
-    pass
+    dashes()
 
 
 if __name__ == '__main__':
