@@ -4,33 +4,35 @@ from collections import Counter
 TEXT_FILE = "data/shakespeare_sonnets.txt"
 
 
-def read_file(file):
-    with open(file, "r") as f:
-        return f.read()
-
-
 def clean(text):
     text = text.lower().split()
     return [x.strip("?,.'!;:") for x in text]
 
 
-def count_words(file):
-    return len(read_file(file).split())
+class Exercise2:
+    def __init__(self, file):
+        self._file = file
 
+    def _read_file(self):
+        with open(self._file, "r") as f:
+            return f.read()
 
-def uniques(file):
-    return len(set(clean(read_file(file))))
+    def count_words(self):
+        return len(self._read_file().split())
 
+    def uniques(self):
+        return len(set(clean(self._read_file())))
 
-def frequency(file):
-    return Counter(clean(read_file(file))).most_common()
+    def frequency(self):
+        return Counter(clean(self._read_file())).most_common()
 
 
 def main():
-    print(f"{count_words(TEXT_FILE) = }")
-    print(f"{uniques(TEXT_FILE) = }")
-    print(f"{frequency(TEXT_FILE)[0][0] = }")
-    print(f"{frequency(TEXT_FILE)[0:3] = }")
+    sp = Exercise2(TEXT_FILE)
+    print(f"{sp.count_words() = }")
+    print(f"{sp.uniques() = }")
+    print(f"{sp.frequency()[0][0] = }")
+    print(f"{sp.frequency()[0:3] = }")
 
 
 if __name__ == "__main__":
