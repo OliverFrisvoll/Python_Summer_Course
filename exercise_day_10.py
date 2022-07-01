@@ -36,7 +36,7 @@ def game(rounds: int = 10):
         bulls_amount = len(bulls)
         cows = [digit for digit in guess if digit in secret and digit not in bulls]
         cows_amount = len(cows)
-        print(f" Bulls: {bulls_amount}, Cows: {cows_amount}")
+        print(f"Bulls: {bulls_amount}, Cows: {cows_amount}")
 
     print(f"You failed, the secret was: {secret}")
 
