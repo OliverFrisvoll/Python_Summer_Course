@@ -2,14 +2,14 @@
 import numpy as np
 
 
-# def birthday_paradox(trials: int = 100000):
-#     people = 23
-#     double_birthdays = 0
-#     random_num = np.random.randint(1, 365 + 1, (trials, people))
-#     for row in random_num:
-#         if len(set(row)) < people:
-#             double_birthdays += 1
-#     print(f"Answer {double_birthdays / trials: .4f}")
+def birthday_paradox(trials: int = 100000):
+    people = 23
+    double_birthdays = 0
+    random_num = np.random.randint(1, 365 + 1, (trials, people))
+    for row in random_num:
+        if len(set(row)) < people:
+            double_birthdays += 1
+    print(f"Answer {double_birthdays / trials: .4f}")
 
 
 def generate_number(digits=4):
@@ -42,8 +42,8 @@ def game(rounds: int = 10):
 
 
 def main():
+    birthday_paradox()
     game()
-    # birthday_paradox()
 
 
 if __name__ == "__main__":
